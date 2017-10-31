@@ -172,7 +172,7 @@ section.transparent {
 }
 
 .block {
-    display: block;
+    display: block !important;
 }
 
 .button {
@@ -185,6 +185,12 @@ section.transparent {
     transition: 0.3s ease all;
     font-family: 'Duru Sans', sans-serif;
     font-size: 13pt;
+    margin: 5px;
+    display: inline-block;
+}
+
+.button.block {
+    margin: 0;
 }
 
 .button:hover {
