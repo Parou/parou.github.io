@@ -1,0 +1,251 @@
+/*
+* author: Alice Peters
+* website: http://www.alicepeters.de/
+*/
+
+@import "https//fonts.googleapis.com/css?family=Open+Sans|Duru+Sans";
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: #6b6b6b;
+}
+
+body {
+    margin-top: 60px;
+}
+
+#topbar {
+    display: block;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    border-bottom: 1px solid #eb4477;
+    background-color: #fff;
+}
+
+#topbar a {
+    display: inline-block;
+    padding: 19px;
+    margin-left: -5px;
+    text-decoration: none;
+    color: #eb4477;
+    border-left: 1px solid #eb4477;
+    transition: 0.2s ease all;
+}
+
+#topbar a:first-child {
+    margin-left: 0;
+    border: none;
+}
+
+#topbar a:hover {
+    background-color: #eb4477;
+    color: #fff;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.container {
+    display: block;
+    width: 80vw;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Duru Sans', sans-serif;
+    color: #eb4477;
+    border-bottom: 1px dotted #eb4477;
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+h3 {
+    border: none;
+}
+
+p {
+    text-align: justify;
+}
+
+.pink {
+    color: #eb4477;
+}
+
+.big {
+    font-size: 14pt;
+}
+
+section {
+    margin: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #eb4477;
+    background-color: #fff;
+}
+
+section:nth-child(even) {
+    background-color: #ffebef;
+}
+
+section.important {
+    background-color: #eb4477;
+    color: #fff !important;
+}
+
+section.important a {
+    color: #fec1cc;
+}
+
+section a {
+    color: #eb4477;
+}
+
+section a:hover {
+    text-decoration: none;
+}
+
+section.transparent {
+    background-color: transparent;
+}
+
+.icon {
+    display: inline-block;
+    width: 256px;
+    height: 256px;
+    text-decoration: none;
+    border-radius: 50%;
+    margin: 5px;
+    transition: 0.2s ease opacity;
+}
+
+.icon.dark {
+    background-color: #622035;
+}
+
+.icon:hover {
+    opacity: 0.8;
+}
+
+.icon img {
+    border-radius: 50%;
+}
+
+.icon span {
+    position: relative;
+    display: block;
+    text-align: center;
+    left: 0;
+    top: -50px;
+    font-family: 'Duru Sans', sans-serif;
+    font-size: 14pt;
+    color: #fff;
+    text-shadow: 0 0 1px #622035;
+    transition: 0.2s ease top;
+}
+
+.icon span.dark {
+    color: #622035;
+    text-shadow: 0 0 1px #eb4477;
+}
+
+.icon:hover span {
+    top: -60px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.block {
+    display: block;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 2px solid #cf1d55;
+    color: #cf1d55;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 3px;
+    transition: 0.3s ease all;
+    font-family: 'Duru Sans', sans-serif;
+    font-size: 13pt;
+}
+
+.button:hover {
+    background-color: #cf1d55;
+    color: #fff;
+}
+
+@keyframes open {
+    from {
+        left: -100vw;
+    }
+    to {
+        left: 0;
+    }
+}
+
+#burgerbutton {
+    display: none;
+}
+
+.burgerimage {
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    font-size: 28pt;
+    cursor: pointer;
+    transition: transform 0.8s ease;
+    color: #eb4477;
+}
+
+.mobile {
+    display: none;
+}
+
+
+/* Screens smaller than the max content width */
+
+@media(max-width: 1080px) {
+    .nomobile {
+        display: none;
+    }
+    .mobile {
+        display: inline;
+    }
+    #burgerbutton:checked~#menu {
+        display: block;
+        animation-name: open;
+        animation-duration: 0.8s;
+    }
+    #burgerbutton:checked~.burgerimage {
+        transform: rotate(360deg);
+    }
+    #menu {
+        background-color: #fff;
+        width: 100vw;
+        position: fixed;
+        top: 61px;
+        left: 0;
+    }
+    #menu a {
+        display: block;
+        border-bottom: 1px solid #eb4477 !important;
+    }
+}
